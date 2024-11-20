@@ -1,0 +1,6 @@
+*.pdf
+.venv/
+__pycache__/
+*.pyc
+data/Brazilian_Portugese_Corpus
+data/machado_de_assis

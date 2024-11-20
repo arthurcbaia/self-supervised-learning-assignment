@@ -1,0 +1,282 @@
+data
+├── Brazilian_Portugese_Corpus
+│   ├── A Alma do Lazaro.txt
+│   ├── A Condessa Vesper.txt
+│   ├── A Danca dos Ossos.txt
+│   ├── Adolfo Caminha
+│   │   ├── A Normalista.txt
+│   │   ├── Bom Crioulo.txt
+│   │   ├── No pais dos ianques.txt
+│   │   └── Tentacao.txt
+│   ├── A Escrava Isaura.txt
+│   ├── Alfarrabios_O Ermitao da Gloria.txt
+│   ├── Aluisio Azevedo
+│   │   ├── A Condessa Vesper.txt
+│   │   ├── A Mortalha de Alzira.txt
+│   │   ├── Casa de pensao.txt
+│   │   ├── Demonios.txt
+│   │   ├── Filomena Borges.txt
+│   │   ├── Girandola de amores.txt
+│   │   ├── Mattos, Malta ou Matta.txt
+│   │   ├── O Cortico.txt
+│   │   ├── O Esqueleto.txt
+│   │   ├── O Homem.txt
+│   │   ├── O Japao.txt
+│   │   ├── O Livro de uma Sogra.txt
+│   │   ├── O Mulato.txt
+│   │   ├── O Touro Negro.txt
+│   │   └── Uma Lagrima de Mulher.txt
+│   ├── A Mao e a Luva.txt
+│   ├── A Moreninha.txt
+│   ├── Amor e Patria.txt
+│   ├── A Mortalha de Alzira.txt
+│   ├── A Normalista.txt
+│   ├── Antonica da Silva.txt
+│   ├── Ao Correr da Pena.txt
+│   ├── A Pata da Gazela.txt
+│   ├── As Minas de Prata.txt
+│   ├── As Mulheres de Mantilha.txt
+│   ├── As Vitima-Algozes.txt
+│   ├── A Viuvinha.txt
+│   ├── Bernardo Guimaraes
+│   │   ├── A Danca dos Ossos.txt
+│   │   ├── A Escrava Isaura.txt
+│   │   ├── Historias e Tradicoes da Provincia de Minas Gerais.txt
+│   │   ├── O Ermitao de Muquem.txt
+│   │   ├── O Garimpeiro.txt
+│   │   └── O Seminarista.txt
+│   ├── Bom Crioulo.txt
+│   ├── Casa de pensao.txt
+│   ├── Casa Velha.txt
+│   ├── Cinco Minutos.txt
+│   ├── Contos Fluminenses.txt
+│   ├── Demonios.txt
+│   ├── Diva.txt
+│   ├── Dom Casmurro.txt
+│   ├── Encarnacao.txt
+│   ├── Esau e Jaco.txt
+│   ├── Filomena Borges.txt
+│   ├── Girandola de amores.txt
+│   ├── guideToDocuments.csv
+│   ├── Helena.txt
+│   ├── Historias da Meia-Noite.txt
+│   ├── Historias e Tradicoes da Provincia de Minas Gerais.txt
+│   ├── Historias Sem Data.txt
+│   ├── Iaia Garcia.txt
+│   ├── Iracema.txt
+│   ├── Joaquim Manuel de Macedo
+│   │   ├── A Moreninha.txt
+│   │   ├── Amor e Patria.txt
+│   │   ├── Antonica da Silva.txt
+│   │   ├── As Mulheres de Mantilha.txt
+│   │   ├── As Vitima-Algozes.txt
+│   │   ├── Luneta Magica.txt
+│   │   ├── Luxo e Vaidade.txt
+│   │   ├── Memorias da Rua do Ouvidor.txt
+│   │   ├── O Moco Loiro.txt
+│   │   ├── O Primo da California.txt
+│   │   ├── Os Dois Amores.txt
+│   │   ├── Os Romances da Semana.txt
+│   │   ├── Remissao de Pecados.txt
+│   │   ├── Romance de uma Velha.txt
+│   │   └── Uma Pupila Rica.txt
+│   ├── Jose de Alencar
+│   │   ├── A Alma do Lazaro.txt
+│   │   ├── Alfarrabios_O Ermitao da Gloria.txt
+│   │   ├── Ao Correr da Pena.txt
+│   │   ├── A Pata da Gazela.txt
+│   │   ├── As Minas de Prata.txt
+│   │   ├── A Viuvinha.txt
+│   │   ├── Cinco Minutos.txt
+│   │   ├── Diva.txt
+│   │   ├── Encarnacao.txt
+│   │   ├── Iracema.txt
+│   │   ├── Luciola.txt
+│   │   ├── Mae.txt
+│   │   ├── O Demonio Familiar.txt
+│   │   ├── O Garatuja.txt
+│   │   ├── O Gaucho.txt
+│   │   ├── O Guarani.txt
+│   │   ├── O que e o casamento.txt
+│   │   ├── O Rio de Janeiro Verso e Reverso.txt
+│   │   ├── O Sertanejo.txt
+│   │   ├── Senhora.txt
+│   │   ├── Sonhos D'oro.txt
+│   │   ├── Til.txt
+│   │   └── Ubirajara.txt
+│   ├── Luciola.txt
+│   ├── Luneta Magica.txt
+│   ├── Luxo e Vaidade.txt
+│   ├── Mae.txt
+│   ├── Manuel Antonio de Almeida
+│   │   └── Memorias de um Sargento de Milicias.txt
+│   ├── Mattos Malta ou Matta.txt
+│   ├── Memorial de Aires.txt
+│   ├── Memorias da Rua do Ouvidor.txt
+│   ├── Memorias de um Sargento de Milicias.txt
+│   ├── Memorias Postumas de Bras Cubas.txt
+│   ├── No pais dos ianques.txt
+│   ├── O Cortico.txt
+│   ├── O Demonio Familiar.txt
+│   ├── O Ermitao de Muquem.txt
+│   ├── O Esqueleto.txt
+│   ├── O Garatuja.txt
+│   ├── O Garimpeiro.txt
+│   ├── O Gaucho.txt
+│   ├── O Guarani.txt
+│   ├── O Homem.txt
+│   ├── O Japao.txt
+│   ├── O Livro de uma Sogra.txt
+│   ├── O Moco Loiro.txt
+│   ├── O Mulato.txt
+│   ├── O Primo da California.txt
+│   ├── O que e o casamento.txt
+│   ├── O Rio de Janeiro Verso e Reverso.txt
+│   ├── Os Dois Amores.txt
+│   ├── O Seminarista.txt
+│   ├── O Sertanejo.txt
+│   ├── Os Romances da Semana.txt
+│   ├── O Touro Negro.txt
+│   ├── Paginas Recolhidas.txt
+│   ├── Papeis Avulsos.txt
+│   ├── Quincas Borba.txt
+│   ├── Reliquias de Casa Velha.txt
+│   ├── Remissao de Pecados.txt
+│   ├── Ressurreicao.txt
+│   ├── Romance de uma Velha.txt
+│   ├── Senhora.txt
+│   ├── Sonhos Doro.txt
+│   ├── Tentacao.txt
+│   ├── Til.txt
+│   ├── Ubirajara.txt
+│   ├── Uma Lagrima de Mulher.txt
+│   ├── Uma Pupila Rica.txt
+│   └── Varias Historias.txt
+├── machado_de_assis
+│   ├── obras_machado_de_assis.csv
+│   └── raw
+│       └── txt
+│           ├── conto
+│           │   ├── contosFluminenses.txt
+│           │   ├── historiasMeiaNoite.txt
+│           │   ├── historiasSemData.txt
+│           │   ├── paginasRecolhidas.txt
+│           │   ├── papeisAvulsos.txt
+│           │   ├── reliquias.txt
+│           │   └── variasHistorias.txt
+│           ├── cr├┤nica
+│           │   ├── aoAcaso.txt
+│           │   ├── aquarelas.txt
+│           │   ├── badaladas.txt
+│           │   ├── balas.txt
+│           │   ├── bonsDias.txt
+│           │   ├── cartasFluminenses.txt
+│           │   ├── cherchez.txt
+│           │   ├── comentariosSemana.txt
+│           │   ├── cronicasFuturo.txt
+│           │   ├── drSemana.txt
+│           │   ├── entre92-94.txt
+│           │   ├── futuro.txt
+│           │   ├── henriqueChaves.txt
+│           │   ├── henrique.txt
+│           │   ├── historia15dias.txt
+│           │   ├── historia30dias.txt
+│           │   ├── joaquim.txt
+│           │   ├── jornalLivro.txt
+│           │   ├── joseAlencar.txt
+│           │   ├── notasSemanais.txt
+│           │   ├── reforma.txt
+│           │   ├── semana.txt
+│           │   ├── velhoSenado.txt
+│           │   └── vicondeCastilho.txt
+│           ├── cr├нtica
+│           │   ├── cantosFantasias.txt
+│           │   ├── castroAlves.txt
+│           │   ├── cenasVida.txt
+│           │   ├── colombo.txt
+│           │   ├── contituinteSombraLuz.txt
+│           │   ├── contosSeletos.txt
+│           │   ├── criticaTeatral.txt
+│           │   ├── cultoDever.txt
+│           │   ├── diarioRJ.txt
+│           │   ├── discursosAcademia.txt
+│           │   ├── ea.txt
+│           │   ├── eduardo.txt
+│           │   ├── fagundes.txt
+│           │   ├── floresFrutos.txt
+│           │   ├── garrett.txt
+│           │   ├── guarani.txt
+│           │   ├── guilhermeMalta.txt
+│           │   ├── harmoniasErrantes.txt
+│           │   ├── henriquieta.txt
+│           │   ├── idealCritico.txt
+│           │   ├── ideiasTeatro.txt
+│           │   ├── inspiracoesClaustro.txt
+│           │   ├── instintoNacionalidade.txt
+│           │   ├── iracema.txt
+│           │   ├── joaquim_1.txt
+│           │   ├── lira20Anos.txt
+│           │   ├── mae.txt
+│           │   ├── magalhaes.txt
+│           │   ├── meridionais.txt
+│           │   ├── miragens.txt
+│           │   ├── nevoasMatutinas.txt
+│           │   ├── novaGeracao.txt
+│           │   ├── oliveiraLimna.txt
+│           │   ├── pareceresConservatorioDramatico.txt
+│           │   ├── passadoPresenteFuturo.txt
+│           │   ├── peregrinacao.txt
+│           │   ├── primoBasilio.txt
+│           │   ├── procelarias.txt
+│           │   ├── proposito.txt
+│           │   ├── revelacoes.txt
+│           │   ├── revistaDramatica.txt
+│           │   ├── revistaTeatros.txt
+│           │   ├── sinfonias.txt
+│           │   ├── suplicio.txt
+│           │   └── tiposQuadros.txt
+│           ├── miscel├вnea
+│           │   ├── cartaBispoRJ.txt
+│           │   ├── cartaImprensa.txt
+│           │   ├── estatua.txt
+│           │   ├── franciscoOtaviano.txt
+│           │   ├── goncalvesDias.txt
+│           │   ├── imortais.txt
+│           │   ├── paixao.txt
+│           │   ├── pedroLuis.txt
+│           │   ├── quedaMulheres.txt
+│           │   └── secretariaAgricultura.txt
+│           ├── poesia
+│           │   ├── almada.txt
+│           │   ├── americanas.txt
+│           │   ├── crisalidas.txt
+│           │   ├── dispersas.txt
+│           │   ├── falenas.txt
+│           │   ├── gazeta.txt
+│           │   └── ocidentais.txt
+│           ├── romance
+│           │   ├── casaVelha.txt
+│           │   ├── domCasmurro.txt
+│           │   ├── esau.txt
+│           │   ├── helena.txt
+│           │   ├── iaia.txt
+│           │   ├── maoLuva.txt
+│           │   ├── memorial-de-aires.txt
+│           │   ├── memoriasBras.txt
+│           │   ├── quincas.txt
+│           │   └── ressurreicao.txt
+│           └── teatro
+│               ├── aventalLuva.txt
+│               ├── bote.txt
+│               ├── caminhoProtocolo.txt
+│               ├── desencantos.txt
+│               ├── deuses.txt
+│               ├── forcas.txt
+│               ├── licaoBotanica.txt
+│               ├── naoConsultesMedico.txt
+│               ├── quaseMinistros.txt
+│               └── tuAmor.txt
+├── processed
+└── Proposta MC959.pdf
+
+18 directories, 261 files
