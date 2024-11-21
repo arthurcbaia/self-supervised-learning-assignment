@@ -328,11 +328,11 @@ def main():
         project="bert-pretraining",
         name="bert-pretrain-run",
         config={
-            "learning_rate": 1e-4,
-            "epochs": 40,
-            "batch_size": 64,
+            "learning_rate": LEARNING_RATE,
+            "epochs": MAX_EPOCHS,
+            "batch_size": TRAIN_BATCH_SIZE,
             "unfrozen_layers": 4,
-            "weight_decay": 0.01
+            "weight_decay": WEIGHT_DECAY
         }
     )
 
@@ -374,15 +374,15 @@ def main():
         data_collator=data_collator,
         compute_metrics=compute_metrics,
         preprocess_logits_for_metrics=preprocess_logits_for_metrics,
-        callbacks=[early_stop]
+        callbacks=[early_stop, WandbCallback()]
     )
     # Start training
     logger.info("Starting training...")
     trainer.train()
 
     # Save the model
-    model.save_pretrained("./bert_pretrained_final")
-    tokenizer.save_pretrained("./bert_pretrained_final")
+    model.save_pretrained(f"{PATH_RESULT_MODEL}/final_model")
+    tokenizer.save_pretrained(f"{PATH_RESULT_MODEL}/final_model")
     logger.info("Training completed and model saved")
 
     # Close wandb run when done
