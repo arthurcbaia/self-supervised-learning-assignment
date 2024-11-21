@@ -12,7 +12,7 @@ nltk.download('punkt_tab')
 
 
 class CorpusProcessor:
-    def __init__(self, base_path: str, chunk_size: int = 256):
+    def __init__(self, base_path: str, chunk_size: int = 128):
         """Initialize the corpus processor with the base directory path."""
         self.base_path = Path(base_path)
         self.brazilian_corpus_path = self.base_path / "Brazilian_Portugese_Corpus"
@@ -245,8 +245,8 @@ def main():
     for path in base_dir.rglob("*"):
         print(f"  {path}")
 
-    # Initialize processor with chunk size of 256 words
-    processor = CorpusProcessor("data", chunk_size=256)
+    # Initialize processor with chunk size of 128 words
+    processor = CorpusProcessor("data", chunk_size=128)
 
     # Create unified dataset
     dataset_df = processor.create_unified_dataset()
