@@ -87,3 +87,17 @@ uv run python your_main_script.py
 
 ### 1. Environment Setup
 uv sync
+
+Test Results:
+Accuracy: 0.8915
+F1 Score: 0.8914
+Precision: 0.8925
+Recall: 0.8915
+
+Best learning rate: 5e-05
+Best F1 score: 0.8966
+
+
+1800 	0.255200 	0.321070 	0.896529 	0.896565 	0.898296 	0.896529
+
+https://keras.io/examples/nlp/pretraining_BERT/

@@ -7,48 +7,87 @@ logger = logging.getLogger(__name__)
 
 
 def load_data(file_path: str = "data/processed/unified_corpus_chunks.csv") -> pd.DataFrame:
-    """Load the unified corpus chunks dataset."""
+    """Load the unified corpus dataset."""
     logger.info(f"Loading data from {file_path}")
     return pd.read_csv(file_path)
 
 
-def create_splits(df: pd.DataFrame, test_size: float = 0.1, random_state: int = 42):
+def create_splits(df: pd.DataFrame, random_state: int = 42):
     """
-    Create train/validation/test splits suitable for all training configurations.
-    First creates a balanced test set, then splits remaining data into train/valid.
+    Create splits for both Machado and non-Machado texts:
+    - Machado: 70% train, 30% test
+    - Non-Machado: 
+        - Test: Same size as Machado test, stratified by source_file
+        - Supervised: Same size as Machado train, stratified by source_file
+        - Unsupervised: Remaining data, only text column
+    All splits are stratified by source_file
     """
-    # First create balanced test set
-    machado_test = df[df['is_machado'] == 1].sample(
-        frac=test_size, random_state=random_state)
-    non_machado_pool = df[df['is_machado'] == 0]
+    # Separate Machado and non-Machado datasets
+    machado_df = df[df['is_machado'] == 1]
+    non_machado_df = df[df['is_machado'] == 0]
+    
+    # Create splits for Machado texts (70% train, 30% test)
+    splits_machado = {}
+    for source, group in machado_df.groupby('source_file'):
+        test = group.sample(frac=0.3, random_state=random_state)
+        train = group[~group.index.isin(test.index)]
+        
+        splits_machado.setdefault('test', []).append(test)
+        splits_machado.setdefault('train', []).append(train)
+    
+    # Combine the splits
+    machado_test = pd.concat(splits_machado['test'])
+    machado_train = pd.concat(splits_machado['train'])
+    
+    # Calculate sizes for non-Machado splits
+    test_size = len(machado_test)
+    train_size = len(machado_train)
+    
+    # Create non-Machado splits
+    splits_non_machado = {'test': [], 'train': [], 'unsupervised': []}
+    
+    for source, group in non_machado_df.groupby('source_file'):
+        # Calculate proportional sizes for this source
+        source_fraction = len(group) / len(non_machado_df)
+        source_test_size = int(test_size * source_fraction)
+        source_train_size = int(train_size * source_fraction)
+        
+        # Sample for test
+        test = group.sample(n=min(source_test_size, len(group)), random_state=random_state)
+        remaining = group[~group.index.isin(test.index)]
+        
+        # Sample for supervised training
+        train = remaining.sample(n=min(source_train_size, len(remaining)), random_state=random_state)
+        
+        # Rest goes to unsupervised
+        unsupervised = remaining[~remaining.index.isin(train.index)][['text']]
+        
+        splits_non_machado['test'].append(test)
+        splits_non_machado['train'].append(train)
+        splits_non_machado['unsupervised'].append(unsupervised)
 
-    # Sample same number of non-Machado texts for test set
-    non_machado_test = non_machado_pool.sample(
-        n=len(machado_test), random_state=random_state)
-    test_df = pd.concat([machado_test, non_machado_test])
+    non_machado_supervised_dataset = pd.concat(splits_non_machado['train'])
+    supervised_dataset = pd.concat([machado_train, non_machado_supervised_dataset])
 
-    # Remove test samples from original dataframe
-    train_df = df[~df.index.isin(test_df.index)]
+    non_machado_test_dataset = pd.concat(splits_non_machado['test'])
+    test_dataset = pd.concat([machado_test, non_machado_test_dataset])
 
-    machado_train = train_df[train_df['is_machado'] == 1]
+    unsupervised_dataset = pd.concat(splits_non_machado['unsupervised'])
 
-    # 50% to supervised, 50% to unsupervised
-    supervised_df = machado_train.sample(frac=0.5, random_state=random_state)
-    unsupervised_df = machado_train[~machado_train.index.isin(
-        supervised_df.index)]
-
-    # get sample of non-Machado texts for supervised, with same number of samples as supervised
-    supervised_non_machado_df = train_df[train_df['is_machado'] == 0].sample(
-        n=len(supervised_df), random_state=random_state)
-
-    supervised_df = pd.concat([supervised_df, supervised_non_machado_df])
-
-    return {
-        'test': test_df,
-        'supervised': supervised_df,
-        'unsupervised': unsupervised_df
+    
+    # Combine all splits into final dictionary
+    final_splits = {
+        'supervised': supervised_dataset,
+        'test': test_dataset,
+        'unsupervised': unsupervised_dataset
     }
-
+    
+    # Log split sizes
+    logger.info("Split sizes:")
+    for split_name, split_df in final_splits.items():
+        logger.info(f"{split_name}: {len(split_df)} samples")
+    
+    return final_splits
 
 def save_splits(splits: dict, output_dir: str = "data/processed/splits"):
     """Save the splits to CSV files."""

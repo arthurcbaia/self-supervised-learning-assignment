@@ -4,3 +4,6 @@ __pycache__/
 *.pyc
 data/Brazilian_Portugese_Corpus
 data/machado_de_assis
+models/
+trained_models/
+pre-trained-models/
